@@ -1,0 +1,127 @@
+@use "@/styles/vars";
+
+.result-leaderboard-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+  flex: 1;
+
+  .result-container, .leaderboard-container {
+    background-color: vars.$background-1;
+    border: 1px solid #9c9c9c;
+    box-shadow: 0 0 1.5rem rgb(53, 52, 60);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    text-align: center;
+    
+    & > * {
+      margin: 0.5rem;
+    }
+  }
+
+  .result-container {
+    width: 65rem;
+    //height: 35rem;
+
+    .see-more {
+      width: 100%;
+      margin-top: 1.5rem;
+      position: relative;
+
+      .see-more-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: vars.$background-1;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .questions-container {
+      width: 100%;
+      height: 20rem;
+      background-color: #1a1818;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      overflow-y:scroll;
+      margin-bottom: 0;
+
+      .question-row {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+
+        .choices-container, .fill-blank-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 1rem;
+          gap: 1rem;
+          flex-wrap: wrap;
+
+          .choice-container {
+            padding: 1rem 2rem;
+            background-color: vars.$background-2;
+            border-radius: 0.5rem;
+            border: 1px solid vars.$line-color;
+            max-width: 20rem;
+            min-height: 4rem;
+            max-height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+
+            &.mine, &.correct {
+              color: rgb(211, 208, 208);
+            }
+
+            &.mine {
+              background-color: rgb(215, 12, 12);
+              border: 2px solid rgb(103, 0, 0);
+            }
+
+            &.correct {
+              background-color: rgb(4, 140, 4);
+              border: 2px solid rgb(1, 75, 0);
+
+            }
+          }
+        }
+      }
+    }
+
+    .shadow-top, .shadow-bottom {
+      width: 100%;
+      height: 2rem;
+      z-index: 100;
+    }
+
+    .shadow-top {
+      background: linear-gradient(to bottom, vars.$background-1, transparent);
+      margin-bottom: -2.5rem; 
+    }
+
+    .shadow-bottom {
+      background: linear-gradient(to top, vars.$background-1, transparent);
+      margin-top: -2rem;
+    }
+
+
+    .try-again {
+      margin-top: 1.5rem;
+    }
+
+  }
+}
