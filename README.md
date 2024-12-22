@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a simple and interactive quiz app that allows users to take a quiz with a set number of questions. The questions are randomly selected from a pool, and the user has a limited amount of time to select their answer. At the end of the quiz, users can view their score along with a detailed breakdown of their answers, showing whether they were correct or not. Additionally, users can save their results to a leaderboard stored in the browser's local storage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Try it out
 
-## Expanding the ESLint configuration
+You can try the quiz app by visiting the following link:  
+[Try the Quiz App](https://nicolatantera.github.io/quiz-app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Randomized Questions**: The quiz randomly selects a set number of questions from a pool of pre-defined questions.
+- **Timed Quiz**: Users are given a limited amount of time to answer each question.
+- **Results Breakdown**: After completing the quiz, users can see their score and an in-depth review of their answers, with indications of whether each answer was correct or not.
+- **Leaderboard**: Users have the option to save their results to a leaderboard, which is stored in the browser's local storage.
+- **Local Storage Support**: The leaderboard persists across sessions as long as the user does not clear their browser storage.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## How to Use
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Answer the Questions**: Select your answer for each question within the given time.
+2. **Review Your Results**: At the end of the quiz, you'll be able to see your score and a breakdown of each answer, whether it was correct or not.
+3. **Save to Leaderboard**: If you'd like, you can save your result to the leaderboard for comparison with others.
